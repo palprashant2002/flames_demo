@@ -1,6 +1,5 @@
 import 'package:flames/temp.dart';
 import 'package:flutter/material.dart';
-
 import 'detailprofile.dart';
 import 'editprofile.dart';
 
