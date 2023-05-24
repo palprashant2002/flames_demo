@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'bottomsheet.dart';
+import 'data.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -15,17 +16,6 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile>
     with TickerProviderStateMixin {
   @override
-  List<String> _languages = ["English", "Hindi"];
-  List<String> myInterest = [
-    "Thriller",
-    "Sci-Fi",
-    "Superhero",
-    "Mythology",
-    "Fantasy",
-    "Action",
-    "Mystery"
-  ];
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -64,44 +54,44 @@ class _EditProfileState extends State<EditProfile>
                       child: Row(
                         children: [
                           Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: Colors.pink.withOpacity(0.05),
-                                  image: DecorationImage(
-                                      image:
-                                          AssetImage("assets/images/user2.jpg"),
-                                      fit: BoxFit.cover)),
-                              height: MediaQuery.of(context).size.width / 4.0,
-                              width: MediaQuery.of(context).size.width / 4.0,
-                              // child: IconButton(
-                              //   icon: Icon(
-                              //     Icons.add,
-                              //     size: 20,
-                              //     color: Colors.pink[400],
-                              //   ),
-                              //   onPressed: () {},
-                              // )
-                              ),
-                          Spacer(),
-                          Container(
-                              decoration: BoxDecoration(
+                            decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 color: Colors.pink.withOpacity(0.05),
                                 image: DecorationImage(
-                              image: AssetImage("assets/images/user3.jpg"),
-                              fit: BoxFit.cover)
-                              ),
-                              height: MediaQuery.of(context).size.width / 4.0,
-                              width: MediaQuery.of(context).size.width / 4.0,
-                              // child: IconButton(
-                              //   icon: Icon(
-                              //     Icons.add,
-                              //     size: 20,
-                              //     color: Colors.pink[400],
-                              //   ),
-                              //   onPressed: () {},
-                              // )
-                              ),
+                                    image:
+                                        AssetImage("assets/images/user2.jpg"),
+                                    fit: BoxFit.cover)),
+                            height: MediaQuery.of(context).size.width / 4.0,
+                            width: MediaQuery.of(context).size.width / 4.0,
+                            // child: IconButton(
+                            //   icon: Icon(
+                            //     Icons.add,
+                            //     size: 20,
+                            //     color: Colors.pink[400],
+                            //   ),
+                            //   onPressed: () {},
+                            // )
+                          ),
+                          Spacer(),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.pink.withOpacity(0.05),
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage("assets/images/user3.jpg"),
+                                    fit: BoxFit.cover)),
+                            height: MediaQuery.of(context).size.width / 4.0,
+                            width: MediaQuery.of(context).size.width / 4.0,
+                            // child: IconButton(
+                            //   icon: Icon(
+                            //     Icons.add,
+                            //     size: 20,
+                            //     color: Colors.pink[400],
+                            //   ),
+                            //   onPressed: () {},
+                            // )
+                          ),
                         ],
                       ),
                     )
@@ -114,30 +104,28 @@ class _EditProfileState extends State<EditProfile>
                   child: Column(
                     children: [
                       Container(
-                          decoration: BoxDecoration(
+                        decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.pink.withOpacity(0.05),
                             image: DecorationImage(
-                              image: AssetImage("assets/images/user4.jpg"),
-                              fit: BoxFit.cover)
-                          ),
-                          height: MediaQuery.of(context).size.width / 2.3,
-                          width: MediaQuery.of(context).size.width / 2.6,
-                          // child: IconButton(
-                          //   icon: Icon(
-                          //     Icons.add,
-                          //     size: 20,
-                          //     color: Colors.pink[400],
-                          //   ),
-                          //   onPressed: () {},
-                          // )
-                          ),
+                                image: AssetImage("assets/images/user4.jpg"),
+                                fit: BoxFit.cover)),
+                        height: MediaQuery.of(context).size.width / 2.3,
+                        width: MediaQuery.of(context).size.width / 2.6,
+                        // child: IconButton(
+                        //   icon: Icon(
+                        //     Icons.add,
+                        //     size: 20,
+                        //     color: Colors.pink[400],
+                        //   ),
+                        //   onPressed: () {},
+                        // )
+                      ),
                       Spacer(),
                       Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.pink.withOpacity(0.05),
-                            
                           ),
                           height: MediaQuery.of(context).size.width / 2.6,
                           width: MediaQuery.of(context).size.width / 2.6,
@@ -398,7 +386,7 @@ class _EditProfileState extends State<EditProfile>
                   height: 52,
                   child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: _languages.length,
+                    itemCount: languages.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return Container(
@@ -411,7 +399,7 @@ class _EditProfileState extends State<EditProfile>
                             borderRadius: BorderRadius.circular(10)),
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          _languages[index],
+                          languages[index],
                           style: TextStyle(fontSize: 15),
                         ),
                       );

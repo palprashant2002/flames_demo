@@ -158,3 +158,14 @@ List<String> converse = [
   "Start with Introduction",
   "Either one is good"
 ];
+
+List<String> languages = ["English", "Hindi"];
+  List<String> myInterest = [
+    "Thriller",
+    "Sci-Fi",
+    "Superhero",
+    "Mythology",
+    "Fantasy",
+    "Action",
+    "Mystery"
+  ];
