@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class DetailProfile extends StatefulWidget {
   const DetailProfile({super.key});
@@ -13,15 +11,16 @@ class _DetailProfileState extends State<DetailProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+        physics:const BouncingScrollPhysics(),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               IconButton(
-                icon: Icon(
+                icon:const Icon(
                   Icons.arrow_back,
                 ),
                 onPressed: () {
@@ -29,7 +28,7 @@ class _DetailProfileState extends State<DetailProfile> {
                 },
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin:const EdgeInsets.all(10),
                 height: MediaQuery.of(context).size.width,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
@@ -38,23 +37,23 @@ class _DetailProfileState extends State<DetailProfile> {
                 ),
                 child: Column(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     Container(
-                      margin: EdgeInsets.all(8),
+                      margin:const EdgeInsets.all(8),
                       height: MediaQuery.of(context).size.width / 1.7,
                       width: MediaQuery.of(context).size.width / 1.7,
-                      decoration: BoxDecoration(
+                      decoration:const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage("assets/images/user1.jpg"),
                               fit: BoxFit.cover),
                           color: Colors.white,
                           shape: BoxShape.circle),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           "VISHU, 21",
                           style: TextStyle(
@@ -62,7 +61,7 @@ class _DetailProfileState extends State<DetailProfile> {
                               fontWeight: FontWeight.bold,
                               color: Colors.pink[400]),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Icon(
@@ -70,20 +69,20 @@ class _DetailProfileState extends State<DetailProfile> {
                           size: 30,
                           color: Colors.grey[400],
                         ),
-                        Spacer()
+                        const Spacer()
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, 'edit');
@@ -91,12 +90,12 @@ class _DetailProfileState extends State<DetailProfile> {
                     child: Card(
                       elevation: 20,
                       shadowColor: Colors.grey,
-                      child: Container(
-                        height: 100,
-                        width: 100,
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.width/4,
+                        width: MediaQuery.of(context).size.width/4,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Icon(
                               Icons.edit_square,
                               size: 40,
@@ -113,18 +112,18 @@ class _DetailProfileState extends State<DetailProfile> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   GestureDetector(
                     onTap: () {},
                     child: Card(
                       elevation: 20,
                       shadowColor: Colors.grey,
-                      child: Container(
-                        height: 100,
-                        width: 100,
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.width/4,
+                        width: MediaQuery.of(context).size.width/4,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Icon(
                               Icons.settings,
                               size: 40,
@@ -141,18 +140,18 @@ class _DetailProfileState extends State<DetailProfile> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   GestureDetector(
                     onTap: () {},
                     child: Card(
                       elevation: 20,
                       shadowColor: Colors.grey,
-                      child: Container(
-                        height: 100,
-                        width: 100,
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.width/4,
+                        width: MediaQuery.of(context).size.width/4,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Icon(
                               Icons.qr_code,
                               size: 40,
@@ -169,7 +168,7 @@ class _DetailProfileState extends State<DetailProfile> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               )
             ]),

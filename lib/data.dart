@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 List<String> education = [
   "Enter your",
   "Education",

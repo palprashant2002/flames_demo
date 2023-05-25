@@ -1,10 +1,9 @@
-import 'package:flames/temp.dart';
 import 'package:flutter/material.dart';
 import 'detailprofile.dart';
 import 'editprofile.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,12 +16,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: 'home',
       routes: {
-        'home' :(context) => MyHomePage(title: 'Find Flames'),
-        'profile':(context) => DetailProfile(),
-        'edit':(context) => EditProfile(),
+        'home' :(context) => const MyHomePage(title: 'Find Flames'),
+        'profile':(context) =>const DetailProfile(),
+        'edit':(context) =>const EditProfile(),
       },
       theme: ThemeData(
-        appBarTheme: AppBarTheme(color: Colors.white),
+        appBarTheme: const AppBarTheme(color: Colors.white),
       ),
     );
   }
@@ -36,7 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -67,14 +65,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailProfile(),
+                  builder: (context) =>const DetailProfile(),
                 ));
           },
           child: Container(
-            margin: EdgeInsets.fromLTRB(8, 4, 0, 4),
+            margin:const EdgeInsets.fromLTRB(8, 4, 0, 4),
             height: 50,
             width: 50,
-            decoration: BoxDecoration(
+            decoration:const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/user1.jpg"),
                     fit: BoxFit.cover),
@@ -84,8 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         centerTitle: true,
         title: Text(widget.title,
-            style: TextStyle(color: Colors.pink, fontWeight: FontWeight.bold)),
-        actions: [
+            style: const TextStyle(color: Colors.pink, fontWeight: FontWeight.bold)),
+        actions: const [
           
           Icon(
             Icons.arrow_back,
@@ -115,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.pink[300],
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined), label: "Home"),
           BottomNavigationBarItem(
@@ -141,10 +139,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        child: Image(image: AssetImage("assets/images/user5.jpg")),
-      ),
+    return const Card(
+      child: Image(image: AssetImage("assets/images/user5.jpg")),
     );
   }
 }

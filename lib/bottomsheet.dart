@@ -1,8 +1,5 @@
 import 'package:flames/data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bottom(context) {
@@ -12,7 +9,7 @@ bottom(context) {
         isScrollControlled: true,
         context: context,
         builder: (BuildContext context) {
-          return Detailbottom();
+          return const Detailbottom();
         });
   }
 }
@@ -43,13 +40,13 @@ class _DetailbottomState extends State<Detailbottom> {
   ];
 
   int pageIndex = 0;
-  PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
         height: MediaQuery.of(context).size.height / 1.3,
-        decoration: BoxDecoration(
+        decoration:const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)),
             color: Colors.white),
@@ -82,7 +79,7 @@ class _DetailbottomState extends State<Detailbottom> {
                   child: TextButton(
                     onPressed: () {
                       _pageController.nextPage(
-                          duration: Duration(milliseconds: 1000),
+                          duration:const Duration(milliseconds: 1000),
                           curve: Curves.ease);
                     },
                     child: Text(
@@ -107,10 +104,10 @@ class _DetailbottomState extends State<Detailbottom> {
                     ),
                     onPressed: () {
                       _pageController.nextPage(
-                          duration: Duration(milliseconds: 1000),
+                          duration:const Duration(milliseconds: 1000),
                           curve: Curves.ease);
                     },
-                    child: Text(
+                    child:const Text(
                       "Next",
                       style: TextStyle(fontSize: 20),
                     )),
@@ -121,6 +118,7 @@ class _DetailbottomState extends State<Detailbottom> {
   }
 }
 
+// ignore: must_be_immutable
 class PgView extends StatefulWidget {
   List<String> data;
   PgView({super.key, required this.data});
@@ -136,7 +134,7 @@ class _PgViewState extends State<PgView> {
       color: Colors.pink.withOpacity(0.05),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
@@ -163,13 +161,13 @@ class _PgViewState extends State<PgView> {
               alignment: Alignment.center,
               // height: MediaQuery.of(context).size.height / 2,
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
+                physics:const BouncingScrollPhysics(),
                 itemCount: widget.data.length,
                 itemBuilder: (context, index) {
                   return (index > 1)
                       ? Container(
-                          margin: EdgeInsets.all(8),
-                          padding: EdgeInsets.all(8),
+                          margin:const EdgeInsets.all(8),
+                          padding:const EdgeInsets.all(8),
                           height: 50,
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -178,12 +176,12 @@ class _PgViewState extends State<PgView> {
                           alignment: Alignment.center,
                           child: Text(
                             widget.data[index],
-                            style: TextStyle(
+                            style:const TextStyle(
                               fontSize: 20,
                             ),
                           ),
                         )
-                      : Container(
+                      :const SizedBox(
                           height: 0,
                           width: 0,
                         );
